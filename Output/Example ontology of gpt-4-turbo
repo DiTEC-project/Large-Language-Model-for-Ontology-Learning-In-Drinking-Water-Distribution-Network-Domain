@@ -1,0 +1,117 @@
+# Define prefixes
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix wd: <http://example.com/water_distribution#> .
+
+# Create classes
+wd:WaterDistributionNetwork rdf:type owl:Class .
+wd:MainLine rdf:type owl:Class .
+wd:ServiceLine rdf:type owl:Class .
+wd:Reservoir rdf:type owl:Class .
+wd:WaterTower rdf:type owl:Class .
+wd:FireHydrant rdf:type owl:Class .
+wd:WaterMeter rdf:type owl:Class .
+wd:BackflowPreventer rdf:type owl:Class .
+wd:PressureRegulator rdf:type owl:Class .
+wd:Pipe rdf:type owl:Class .
+wd:Pump rdf:type owl:Class .
+wd:Valve rdf:type owl:Class .
+
+# Define relationships
+wd:WaterDistributionNetwork rdfs:subClassOf owl:Thing .
+wd:MainLine rdfs:subClassOf wd:WaterDistributionNetwork .
+wd:ServiceLine rdfs:subClassOf wd:WaterDistributionNetwork .
+wd:Reservoir rdfs:subClassOf wd:WaterDistributionNetwork .
+wd:WaterTower rdfs:subClassOf wd:WaterDistributionNetwork .
+wd:FireHydrant rdfs:subClassOf wd:WaterDistributionNetwork .
+wd:WaterMeter rdfs:subClassOf wd:WaterDistributionNetwork .
+wd:BackflowPreventer rdfs:subClassOf wd:WaterDistributionNetwork .
+wd:PressureRegulator rdfs:subClassOf wd:WaterDistributionNetwork .
+
+wd:Pipe rdfs:subClassOf owl:Thing .
+wd:Pump rdfs:subClassOf owl:Thing .
+wd:Valve rdfs:subClassOf owl:Thing .
+
+# Define part relationships
+wd:hasPart rdf:type owl:ObjectProperty .
+
+# Link parts to their wholes
+wd:WaterDistributionNetwork wd:hasPart wd:MainLine .
+wd:WaterDistributionNetwork wd:hasPart wd:ServiceLine .
+wd:WaterDistributionNetwork wd:hasPart wd:Reservoir .
+wd:WaterDistributionNetwork wd:hasPart wd:WaterTower .
+wd:WaterDistributionNetwork wd:hasPart wd:FireHydrant .
+wd:WaterDistributionNetwork wd:hasPart wd:WaterMeter .
+wd:WaterDistributionNetwork wd:hasPart wd:BackflowPreventer .
+wd:WaterDistributionNetwork wd:hasPart wd:PressureRegulator .
+
+wd:MainLine wd:hasPart wd:Pipe .
+wd:MainLine wd:hasPart wd:Pump .
+wd:MainLine wd:hasPart wd:Valve .
+
+wd:ServiceLine wd:hasPart wd:Pipe .
+wd:ServiceLine wd:hasPart wd:Valve .
+wd:ServiceLine wd:hasPart wd:WaterMeter .
+
+wd:WaterTower wd:hasPart wd:Reservoir .
+wd:WaterTower wd:hasPart wd:Pipe .
+wd:WaterTower wd:hasPart wd:Pump .
+wd:WaterTower wd:hasPart wd:Valve .
+
+# Equivalent Classes
+wd:Pipe rdf:type owl:Class ;
+    owl:equivalentClass wd:Conduit.
+wd:Pump rdf:type owl:Class ;
+    owl:equivalentClass wd:WaterPump.
+wd:Valve rdf:type owl:Class ;
+    owl:equivalentClass wd:FlowRegulator.
+wd:Reservoir rdf:type owl:Class ;
+    owl:equivalentClass wd:WaterStorage.
+wd:WaterMeter rdf:type owl:Class ;
+    owl:equivalentClass wd:FlowMeter.
+wd:MainLine rdf:type owl:Class ;
+    owl:equivalentClass wd:PrimaryWaterPipeline.
+
+# Properties
+wd:Material rdf:type owl:DatatypeProperty .
+wd:Diameter rdf:type owl:DatatypeProperty .
+wd:Length rdf:type owl:DatatypeProperty .
+wd:InstallationDate rdf:type owl:DatatypeProperty .
+wd:Type rdf:type owl:DatatypeProperty .
+wd:Capacity rdf:type owl:DatatypeProperty .
+wd:PowerConsumption rdf:type owl:DatatypeProperty .
+wd:MaintenanceSchedule rdf:type owl:DatatypeProperty .
+wd:OperationalStatus rdf:type owl:DatatypeProperty .
+wd:SurfaceArea rdf:type owl:DatatypeProperty .
+wd:WaterQuality rdf:type owl:DatatypeProperty .
+wd:Height rdf:type owl:DatatypeProperty .
+wd:MeasurementAccuracy rdf:type owl:DatatypeProperty .
+wd:Model rdf:type owl:DatatypeProperty .
+wd:LastCalibrationDate rdf:type owl:DatatypeProperty .
+wd:Color rdf:type owl:DatatypeProperty .
+wd:LastInspectionDate rdf:type owl:DatatypeProperty .
+wd:SetPressure rdf:type owl:DatatypeProperty .
+wd:Size rdf:type owl:DatatypeProperty .
+wd:AdjustmentMechanism rdf:type owl:DatatypeProperty .
+# Define object properties for relationships
+wd:ConnectedTo rdf:type owl:ObjectProperty .
+wd:InstalledAt rdf:type owl:ObjectProperty .
+wd:InstalledOn rdf:type owl:ObjectProperty .
+wd:BeginsAt rdf:type owl:ObjectProperty .
+wd:EndsAt rdf:type owl:ObjectProperty .
+wd:FedBy rdf:type owl:ObjectProperty .
+wd:Supplies rdf:type owl:ObjectProperty .
+
+# Link properties to classes
+wd:Pipe rdfs:domain wd:Material, wd:Diameter, wd:Length, wd:InstallationDate, wd:ConnectedTo .
+wd:Pump rdfs:domain wd:Type, wd:Capacity, wd:PowerConsumption, wd:MaintenanceSchedule, wd:InstalledAt .
+wd:Valve rdfs:domain wd:Type, wd:Size, wd:OperationalStatus, wd:InstalledOn .
+wd:Reservoir rdfs:domain wd:Capacity, wd:SurfaceArea, wd:WaterQuality, wd:FedBy, wd:Supplies .
+wd:WaterTower rdfs:domain wd:Height, wd:Capacity, wd:StructuralIntegrity, wd:Supplies .
+wd:WaterMeter rdfs:domain wd:MeasurementAccuracy, wd:Model, wd:LastCalibrationDate, wd:InstalledOn .
+wd:FireHydrant rdfs:domain wd:Color, wd:Type, wd:OperationalStatus, wd:ConnectedTo .
+wd:BackflowPreventer rdfs:domain wd:Type, wd:Size, wd:LastInspectionDate, wd:InstalledOn .
+wd:PressureRegulator rdfs:domain wd:SetPressure, wd:Size, wd:AdjustmentMechanism, wd:InstalledOn .
+wd:ServiceLine rdfs:domain wd:Material, wd:Diameter, wd:InstallationDate, wd:ConnectedTo .
+wd:MainLine rdfs:domain wd:Material, wd:Diameter, wd:InstallationDate, wd:BeginsAt, wd:EndsAt .
