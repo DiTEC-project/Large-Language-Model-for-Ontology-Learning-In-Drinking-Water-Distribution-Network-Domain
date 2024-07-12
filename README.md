@@ -17,7 +17,7 @@ Query Pipeline:
 
 # Instructions
 The file "Python code" contains all the information for the reuse. 
-The `Thesis_code.py` contains all the core code for creating ontology using Python.
+The `Python_code.py` contains all the core code for creating ontology using Python.
 The input document is named `Document_Input`. 
 The file `Parameters.yaml` encompass all adjustable parameters in the code. 
 
@@ -31,9 +31,9 @@ The file `Parameters.yaml` encompass all adjustable parameters in the code.
 Before running the code, ensure you have the following files:
 - `Parameters.yaml`
 - `Document_Input`
-- `Thesis_code.py`
+- `Python_cpde.py`
 
-You do not need to execute `Parameters.yaml` and `Document_Input` unless you want to change the parameters and input, they are required for the `Thesis_code.py`.
+You do not need to execute `Parameters.yaml` and `Document_Input` unless you want to change the parameters and input, they are required for the `Python_code.py`.
 
 ## Configuration
 
@@ -42,7 +42,7 @@ All default parameters are stored in `Parameters.yaml`. If you need to adjust qu
 ## Execution
 
 To run the code:
-1. Open `Thesis_code.py` in Visual Studio Code.
+1. Open `Python_code.py` in Visual Studio Code.
 2. Install any missing packages if necessary.
 3. Replace the default file locations for `Parameters.yaml` and `Document_Input` with the paths to your files.
 4. Input your API key for OpenAI, Hugging Face, or another compatible platform for your LLM.
