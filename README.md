@@ -16,7 +16,7 @@ Query Pipeline:
 
 
 # Instructions
-The file "Python code" contains all the information for the reuse. 
+The file "Code" contains all the information for the reuse. 
 The `Python_code.py` contains all the core code for creating ontology using Python.
 The input document is named `Document_Input`. 
 The file `Parameters.yaml` encompass all adjustable parameters in the code. 
