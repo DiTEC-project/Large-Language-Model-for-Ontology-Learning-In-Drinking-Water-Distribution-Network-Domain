@@ -1,7 +1,7 @@
 # Large-Language-Model-for-Ontology-Learning-In-Drinking-Water-Distribution-Network-Domain
 
 # Introduction
-Currently, most ontologies are created manually, which is time consuming and labour intensive. Meanwhile, the advanced capabilities of Large Language Models (LLMs) have proven beneficial in various domains, significantly improving the efficiency of text processing and text generation. Therefore, this paper focuses on the use of LLMs for ontology learning. It uses a manual ontology creation method as a basis to facilitate the use of LLMs for ontology learning. Two different variants of LLMs have been experimented with, and they all demonstrate the capability of ontology learning to varying degrees. This approach proves that it is possible to automate the entire process of using LLMs to generate the ontology and make it accessible to people without prior domain expertise. It is also very efficient, not only saving significant time but also improving usability. The final ontology returned by the LLMs could be used as a base version according to the evaluation results and needs to be validated and refined by the domain experts to ensure its accuracy and completeness. 
+Currently, most ontologies are created manually, which is time-consuming and labour-intensive. Meanwhile, the advanced capabilities of Large Language Models (LLMs) have proven beneficial in various domains, significantly improving the efficiency of text processing and text generation. Therefore, this paper focuses on the use of LLMs for ontology learning. It uses a manual ontology construction method as a basis to facilitate the LLMs for ontology learning. The proposed approach is based on Retrieval Augmented Generation (RAG), and passed queries to LLMs are based upon the manual ontology method -- UPON Lite ontology. Two different variants of LLMs have been experimented with, and they all demonstrate the capability of ontology learning to varying degrees. This approach shows promising initial results in the direction of (semi-) automated ontology learning using LLMs and makes the ontology construction process easier for people without prior domain expertise. The results were evaluated by the domain expert, and LLMs results were ranked based on the defined criteria. 
 
 Below are flowcharts that visualize the logic behind the RAG and query pipeline:
 
@@ -11,7 +11,7 @@ RAG:
 
 
 Query Pipeline:
-![FLOWCHART](https://github.com/DiTEC-project/Large-Language-Model-for-Ontology-Learning-In-Drinking-Water-Distribution-Network-Domain/assets/145769931/6e734f2d-14a0-4e80-8525-7b34aeeac875)
+![Flowchart without input](https://github.com/user-attachments/assets/416e215e-1391-48c6-92e5-2aa6b939d8b6)
 
 
 
